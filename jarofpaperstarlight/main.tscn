@@ -1,0 +1,60 @@
+[gd_scene load_steps=8 format=3 uid="uid://dig0cdjt7jpy6"]
+
+[ext_resource type="Script" uid="uid://3y1n11i6xs6i" path="res://main.gd" id="1_0xm2m"]
+[ext_resource type="PackedScene" uid="uid://cyhxnrhlyqpeg" path="res://player.tscn" id="2_h2yge"]
+[ext_resource type="PackedScene" uid="uid://fldsm8nrdj4k" path="res://paper_star.tscn" id="3_h2yge"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0xm2m"]
+size = Vector2(2000, 5)
+
+[sub_resource type="BoxMesh" id="BoxMesh_0xm2m"]
+size = Vector3(2000, 5, 1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h2yge"]
+size = Vector2(100, 5)
+
+[sub_resource type="BoxMesh" id="BoxMesh_h2yge"]
+size = Vector3(100, 5, 1)
+
+[node name="Main" type="Node"]
+script = ExtResource("1_0xm2m")
+
+[node name="CameraPivot" type="Marker2D" parent="."]
+
+[node name="Camera2D" type="Camera2D" parent="CameraPivot"]
+
+[node name="PaperStar" parent="." instance=ExtResource("3_h2yge")]
+position = Vector2(362, -6)
+
+[node name="Player" parent="." instance=ExtResource("2_h2yge")]
+
+[node name="StartPosition" type="Marker2D" parent="."]
+position = Vector2(240, 0)
+
+[node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
+
+[node name="Ground" type="StaticBody2D" parent="."]
+position = Vector2(-566, -320)
+collision_mask = 7
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground"]
+position = Vector2(702, 473)
+shape = SubResource("RectangleShape2D_0xm2m")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="Ground"]
+position = Vector2(702, 475)
+mesh = SubResource("BoxMesh_0xm2m")
+
+[node name="Ground2" type="StaticBody2D" parent="."]
+position = Vector2(-566, -320)
+collision_mask = 7
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground2"]
+position = Vector2(757, 382)
+shape = SubResource("RectangleShape2D_h2yge")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="Ground2"]
+position = Vector2(757, 382)
+mesh = SubResource("BoxMesh_h2yge")
