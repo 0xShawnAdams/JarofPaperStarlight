@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://yapiun7t5gpx"]
+
+[ext_resource type="Texture2D" uid="uid://cpr4iut03ecld" path="res://Art/background/wooden block concept.png" id="1_mi635"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s8bxr"]
+size = Vector2(178, 75)
+
+[node name="Platform" type="StaticBody2D"]
+
+[node name="WoodenBlockConcept" type="Sprite2D" parent="."]
+position = Vector2(5, 2)
+scale = Vector2(0.883, 1)
+texture = ExtResource("1_mi635")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(5, 8.5)
+shape = SubResource("RectangleShape2D_s8bxr")
