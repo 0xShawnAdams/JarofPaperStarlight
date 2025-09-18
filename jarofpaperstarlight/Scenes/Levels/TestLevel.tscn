@@ -22,8 +22,15 @@ position = Vector2(704, 372)
 [node name="Player" parent="." instance=ExtResource("3_iuug4")]
 position = Vector2(252, 345)
 
+[node name="Camera2D" type="Camera2D" parent="Player"]
+position = Vector2(-1, 0)
+limit_smoothed = true
+position_smoothing_enabled = true
+drag_horizontal_enabled = true
+drag_vertical_enabled = true
+
 [node name="StaticBody2D" parent="." instance=ExtResource("4_iuug4")]
-position = Vector2(909, 1011)
+position = Vector2(909, 1027)
 scale = Vector2(11.4351, -2.59849)
 
 [node name="Platform" parent="." instance=ExtResource("4_iuug4")]
