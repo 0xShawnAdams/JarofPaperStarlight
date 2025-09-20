@@ -1,6 +1,7 @@
 extends CharacterBody2D
 signal hit
 
+var dialogue_active = false
 
 @export var speed := 400.0
 @export var accel := 2500.0      # how fast to reach full speed
@@ -13,10 +14,25 @@ var screen_size
 
 func _ready():
 	screen_size = get_viewport_rect().size
+	#var dlg = get_node("/root/Testlevel/DialogueWindow")
+	var dialogue_window := get_node("../CanvasLayer/DialogueWindow")
+	dialogue_window.connect("dialogue_started", Callable(self, "_on_dialogue_started"))
+	dialogue_window.connect("dialogue_finished", Callable(self, "_on_dialogue_finished"))
+	
+func _on_dialogue_started():
+	print("Player is aware of dialogue")
+	dialogue_active = true
+	#$DialogueWindow.show()
 
+func _on_dialogue_finished():
+	dialogue_active = false
+	#$DialogueWindow.hide()
+
+	
 func _physics_process(delta):
 	# Apply gravity
-	
+	if (dialogue_active):
+		return
 	# Jump start
 	if is_on_floor() and Input.is_action_just_pressed("move_up"):
 		velocity.y = jump_speed

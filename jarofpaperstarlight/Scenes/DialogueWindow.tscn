@@ -1,0 +1,24 @@
+[gd_scene load_steps=2 format=3 uid="uid://ckjabkq2if48y"]
+
+[ext_resource type="Script" uid="uid://4homl2q3slbr" path="res://Scripts/DialogueGUI.gd" id="1_hok7m"]
+
+[node name="DialogueWindow" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_hok7m")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer"]
+layout_mode = 2
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+text = "Default Text"
+autowrap_mode = 2
