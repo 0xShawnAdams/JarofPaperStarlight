@@ -5,7 +5,7 @@ signal hit
 @export var speed := 400.0
 @export var accel := 2500.0      # how fast to reach full speed
 @export var deccel := 3000.0     # how fast to stop
-@export var jump_speed := -800.0      # Initial jump impulse (negative = up)
+@export var jump_speed := -900.0      # Initial jump impulse (negative = up)
 @export var gravity := 2000.0         # Normal gravity
 @export var fall_gravity := 3000.0    # Stronger gravity when falling
 @export var low_jump_gravity := 3500.0# Extra gravity if jump is released early
