@@ -1,6 +1,6 @@
 extends Area2D
 
-signal dialogue_triggered(npc_texture: Texture2D, dialogue_lines: Array)
+#signal dialogue_triggered(npc_texture: Texture2D, dialogue_lines: Array)
 
 var player_in_area := false
 var dialoguetriggered = false;
@@ -42,8 +42,9 @@ func _process(delta):
 	if (not dialoguetriggered):
 		if player_in_area and Input.is_action_just_pressed("z"):
 			#emit_signal("dialogue_triggered")
-			var tex = texture.texture
-			emit_signal("dialogue_triggered", tex, dialogue_lines)
+			var tex = texture
+			#emit_signal("dialogue_triggered", tex, dialogue_lines)
+			SignalBus.NPCDialogueTrigger.emit(tex, dialogue_lines)
 			dialoguetriggered = true	
 					
 			

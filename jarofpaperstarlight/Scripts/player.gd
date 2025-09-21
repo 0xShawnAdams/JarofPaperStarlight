@@ -14,10 +14,12 @@ var screen_size
 
 func _ready():
 	screen_size = get_viewport_rect().size
+	SignalBus.dialogue_started.connect(_on_dialogue_started)
+	SignalBus.dialogue_finished.connect(_on_dialogue_finished)
 	#var dlg = get_node("/root/Testlevel/DialogueWindow")
-	var dialogue_window := get_node("../CanvasLayer/DialogueWindow")
-	dialogue_window.connect("dialogue_started", Callable(self, "_on_dialogue_started"))
-	dialogue_window.connect("dialogue_finished", Callable(self, "_on_dialogue_finished"))
+	#var dialogue_window := get_node("../CanvasLayer/DialogueWindow")
+	#dialogue_window.connect("dialogue_started", Callable(self, "_on_dialogue_started"))
+	#dialogue_window.connect("dialogue_finished", Callable(self, "_on_dialogue_finished"))
 	
 func _on_dialogue_started():
 	print("Player is aware of dialogue")
