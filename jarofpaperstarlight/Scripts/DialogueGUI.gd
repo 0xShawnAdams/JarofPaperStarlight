@@ -45,7 +45,7 @@ func _show_line():
 	current_text = lines[current_line]
 	reveal_count = 0
 	reveal_timer = 0.0
-	$HBoxContainer/Label.text = ""
+	$ColorRect/HBoxContainer/Label.text = ""
 
 func _process(delta):
 	if not active: return
@@ -63,7 +63,7 @@ func _process(delta):
 		if reveal_timer >= char_speed:
 			reveal_timer = 0.0
 			reveal_count += 1
-			$HBoxContainer/Label.text = current_text.substr(0, reveal_count)
+			$ColorRect/HBoxContainer/Label.text = current_text.substr(0, reveal_count)
 	else:
 		# Only allow advancing once full line is revealed
 		if Input.is_action_just_pressed(advance_key):
@@ -95,8 +95,8 @@ func _end_dialogue():
 
 
 func _ready():
-	$HBoxContainer/TextureRect.texture = texture
-	$HBoxContainer/Label.text = text
+	$ColorRect/HBoxContainer/TextureRect.texture = texture
+	$ColorRect/HBoxContainer/Label.text = text
 	#SignalBus.NPCDialogueTrigger.connect(start_dialogue(lines))
 	#SignalBus.dialogue_started.connect(Callable(self, "start_dialogue"))
 	SignalBus.NPCDialogueTrigger.connect(Callable(self, "start_dialogue"))
@@ -105,6 +105,6 @@ func _ready():
 	#SignalBus.dialogue_finished.connect(_end_dialogue)
 	
 func set_content(tex: Texture2D, dialogue: String):
-	$HBoxContainer/TextureRect.texture = tex
-	$HBoxContainer/Label.text = dialogue
+	$ColorRect/HBoxContainer/TextureRect.texture = tex
+	$ColorRect/HBoxContainer/Label.text = dialogue
 	

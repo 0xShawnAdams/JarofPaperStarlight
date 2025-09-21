@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://daagploownaed"]
+[gd_scene load_steps=11 format=3 uid="uid://daagploownaed"]
 
 [ext_resource type="Script" uid="uid://buapp8amtwu2l" path="res://Scenes/Levels/TestLevelManager.gd" id="1_dqpvo"]
 [ext_resource type="Texture2D" uid="uid://d0brokt8vb68a" path="res://Art/first level concept design.png" id="1_ss4xl"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://c3a28qtro62is" path="res://Scenes/npc.tscn" id="5_o0omn"]
 [ext_resource type="Texture2D" uid="uid://dan75x0yphbel" path="res://Art/bear.png" id="7_1mv4x"]
 [ext_resource type="PackedScene" uid="uid://ckjabkq2if48y" path="res://Scenes/DialogueWindow.tscn" id="7_gyeg4"]
+[ext_resource type="PackedScene" uid="uid://dtbos2c0qwni" path="res://Scenes/JarGUI.tscn" id="9_a7u0l"]
 
 [sub_resource type="ImageTexture" id="ImageTexture_ytf4i"]
 
@@ -62,3 +63,5 @@ texture = ExtResource("7_1mv4x")
 
 [node name="DialogueWindow" parent="CanvasLayer" instance=ExtResource("7_gyeg4")]
 visible = false
+
+[node name="JarGUI" parent="CanvasLayer" instance=ExtResource("9_a7u0l")]

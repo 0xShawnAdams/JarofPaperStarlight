@@ -5,21 +5,28 @@
 [node name="DialogueWindow" type="Control"]
 layout_mode = 3
 anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
 script = ExtResource("1_hok7m")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="."]
+[node name="ColorRect" type="ColorRect" parent="."]
+custom_minimum_size = Vector2(400, 100)
+layout_mode = 2
+offset_right = 400.0
+offset_bottom = 100.0
+color = Color(0.381703, 0.381703, 0.381703, 1)
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ColorRect"]
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="TextureRect" type="TextureRect" parent="HBoxContainer"]
+[node name="TextureRect" type="TextureRect" parent="ColorRect/HBoxContainer"]
 layout_mode = 2
 stretch_mode = 5
 
-[node name="Label" type="Label" parent="HBoxContainer"]
+[node name="Label" type="Label" parent="ColorRect/HBoxContainer"]
 custom_minimum_size = Vector2(400, 0)
 layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
 text = "Default Text"
 autowrap_mode = 2
