@@ -1,7 +1,10 @@
 extends Node2D
 var dialogue_active = false
+var walking = false
 #signal dialogue_started
 #signal dialogue_finished
+var sound = load("res://Music/Step Loop.wav")
+var StepPlayer = AudioStreamPlayer2D.new()
 
 """ CALL LIKE:
 play_sound("res://sounds/explosion.wav", Vector2(100, 200))
@@ -15,7 +18,7 @@ func play_sound(stream_path: String, position: Vector2):
 	var player = AudioStreamPlayer2D.new()
 	add_child(player)
 	player.stream = sound
-	player.global_position = position
+	player.global_position = $Player/Camera2D.global_position
 	player.play()
 	
 	var duration = sound.get_length()
@@ -28,14 +31,31 @@ func _on_dialogue_finished():
 	
 func _ready():
 	
+	#if sound == null:
+	#	push_error("Failed to load sound: " + stream_path)
+	#	return
+	StepPlayer.stream = sound
+	add_child(StepPlayer)
+	
 	var npc := $NPC  # or preload/instantiate
 	#npc.connect("dialogue_triggered", Callable(self, "_on_npc_dialogue_triggered"))
 	SignalBus.NPCDialogueTrigger.connect(_on_npc_dialogue_triggered)
-	SignalBus.PlayerStepsSound.connect(_on_Player_Walk)
+	#SignalBus.PlayerStepsSound.connect(_on_Player_Walk)
+	SignalBus.PlayWalkingAudio.connect(_on_Player_Walk)
+	SignalBus.StopWalkingAudio.connect(_on_Stop_Walking)
 	SignalBus.PaperStarCollectAudio.connect(_on_Star_Collect)
 	SignalBus.PlayerJumpAudio.connect(_on_Player_Jump)
 	SignalBus.PlayerLandedAudio.connect(_on_Player_Land)
 	SignalBus.InteractAudio.connect(_on_Player_Interact)
+	
+	
+func _process(delta: float) -> void:
+
+	if (walking):
+		if (not StepPlayer.playing):
+			StepPlayer.play()
+	else:
+		StepPlayer.stop()
 	
 	
 	
@@ -70,6 +90,11 @@ func _on_Sword_Swipe():
 func _on_Star_Text():
 	play_sound("res://Music/StarTextLoop.wav", Vector2(100, 200))
 func _on_Player_Interact():
+	#play_sound("res://Music/Interact.wav", Vector2(100, 200))
 	play_sound("res://Music/Interact.wav", Vector2(100, 200))
+
 func _on_Player_Walk():
-	play_sound("res://Music/Step Loop.wav", Vector2(100, 200))
+	walking = true
+#play_sound("res://Music/Step Loop.wav", Vector2(100, 200))
+func _on_Stop_Walking():
+	walking = false

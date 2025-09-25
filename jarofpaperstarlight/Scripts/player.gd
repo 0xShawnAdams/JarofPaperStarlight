@@ -12,6 +12,8 @@ var dialogue_active = false
 @export var low_jump_gravity := 3500.0# Extra gravity if jump is released early
 var screen_size
 var falling = false
+var steppingaudio = false
+var isWalking = false
 
 func _ready():
 	screen_size = get_viewport_rect().size
@@ -43,7 +45,7 @@ func _physics_process(delta):
 	# Jump start
 	if is_on_floor() and Input.is_action_just_pressed("move_up"):
 		velocity.y = jump_speed
-		SignalBus.PlayerJump.emit()
+		SignalBus.PlayerJumpAudio.emit()
 		falling = true
 	# Gravity
 	if velocity.y > 0:  # Falling
@@ -63,6 +65,14 @@ func _physics_process(delta):
 	#velocity.x = direction * speed
 	var input_dir := Input.get_action_strength("move_right") - Input.get_action_strength("move_left")
 	var target_speed := input_dir * speed
+	if input_dir and !isWalking:
+		# Player just started moving
+		isWalking = true
+		SignalBus.PlayWalkingAudio.emit()
+	elif !input_dir and isWalking:
+		# Player stopped moving
+		isWalking = false
+		SignalBus.StopWalkingAudio.emit()
 
 	if input_dir != 0:
 		velocity.x = move_toward(velocity.x, target_speed, accel * delta)
@@ -78,9 +88,10 @@ func _physics_process(delta):
 	if input_dir != 0:
 		$AnimatedSprite2D.flip_h = input_dir < 0   # true when moving left
 		$AnimatedSprite2D.play("Walk")
-		SignalBus.PlayerStepsSound.emit()
+		SignalBus.PlayWalkingAudio.emit()
 	else:
 		$AnimatedSprite2D.stop()
+		SignalBus.StopWalkingAudio.emit()
 
 
 func start(pos):
