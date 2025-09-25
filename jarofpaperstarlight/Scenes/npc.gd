@@ -45,6 +45,8 @@ func _process(delta):
 			var tex = texture
 			#emit_signal("dialogue_triggered", tex, dialogue_lines)
 			SignalBus.NPCDialogueTrigger.emit(tex, dialogue_lines)
+			SignalBus.InteractAudio.emit()
+			SignalBus.TextAudio.emit()
 			dialoguetriggered = true	
 					
 			

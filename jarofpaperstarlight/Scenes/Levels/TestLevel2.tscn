@@ -1,0 +1,71 @@
+[gd_scene load_steps=12 format=3 uid="uid://ba378uvca5r53"]
+
+[ext_resource type="Script" uid="uid://buapp8amtwu2l" path="res://Scenes/Levels/TestLevelManager.gd" id="1_almqe"]
+[ext_resource type="Texture2D" uid="uid://c3sdjo6due74q" path="res://Art/background/IMG_0422.png" id="2_almqe"]
+[ext_resource type="PackedScene" uid="uid://fldsm8nrdj4k" path="res://Scenes/paper_star.tscn" id="3_xhbyj"]
+[ext_resource type="PackedScene" uid="uid://cyhxnrhlyqpeg" path="res://Scenes/player.tscn" id="4_8dbpo"]
+[ext_resource type="PackedScene" uid="uid://d2yhmq3ectdh2" path="res://Scenes/platform.tscn" id="5_f1oxt"]
+[ext_resource type="PackedScene" uid="uid://c3a28qtro62is" path="res://Scenes/npc.tscn" id="6_c5omb"]
+[ext_resource type="Texture2D" uid="uid://dan75x0yphbel" path="res://Art/bear.png" id="7_goqlq"]
+[ext_resource type="PackedScene" uid="uid://ckjabkq2if48y" path="res://Scenes/DialogueWindow.tscn" id="8_avtx7"]
+[ext_resource type="PackedScene" uid="uid://dtbos2c0qwni" path="res://Scenes/JarGUI.tscn" id="9_3jove"]
+[ext_resource type="AudioStream" uid="uid://by24m5bcpxiyg" path="res://Music/zip/Jar of Paper starlight main theme.wav" id="10_tfc4c"]
+
+[sub_resource type="ImageTexture" id="ImageTexture_ytf4i"]
+
+[node name="TestLevel" type="Node2D"]
+script = ExtResource("1_almqe")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("ImageTexture_ytf4i")
+
+[node name="FirstLevelConceptDesign" type="Sprite2D" parent="."]
+position = Vector2(743, 455)
+texture = ExtResource("2_almqe")
+
+[node name="PaperStar" parent="." instance=ExtResource("3_xhbyj")]
+position = Vector2(704, 372)
+
+[node name="Player" parent="." instance=ExtResource("4_8dbpo")]
+position = Vector2(252, 345)
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+position = Vector2(-1, 0)
+limit_smoothed = true
+position_smoothing_enabled = true
+drag_horizontal_enabled = true
+drag_vertical_enabled = true
+
+[node name="StaticBody2D" parent="." instance=ExtResource("5_f1oxt")]
+position = Vector2(909, 1027)
+scale = Vector2(11.4351, -2.59849)
+
+[node name="Platform" parent="." instance=ExtResource("5_f1oxt")]
+position = Vector2(952, 551)
+scale = Vector2(1.44, 0.160001)
+
+[node name="Platform3" parent="." instance=ExtResource("5_f1oxt")]
+position = Vector2(1018, 820)
+scale = Vector2(1.44, 0.160001)
+
+[node name="Platform4" parent="." instance=ExtResource("5_f1oxt")]
+position = Vector2(501, 704)
+scale = Vector2(1.44, 0.160001)
+
+[node name="Platform2" parent="." instance=ExtResource("5_f1oxt")]
+position = Vector2(234, 452)
+scale = Vector2(2.56, 0.151446)
+
+[node name="NPC" parent="." instance=ExtResource("6_c5omb")]
+position = Vector2(1465, 838)
+texture = ExtResource("7_goqlq")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="DialogueWindow" parent="CanvasLayer" instance=ExtResource("8_avtx7")]
+visible = false
+
+[node name="JarGUI" parent="CanvasLayer" instance=ExtResource("9_3jove")]
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("10_tfc4c")

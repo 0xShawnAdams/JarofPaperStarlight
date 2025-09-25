@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://doemv53u333d0"
+path="res://.godot/imported/Laguna Text Scroll.wav-c9820a50d609a331151883b4aaf935d8.sample"
+
+[deps]
+
+source_file="res://Music/Laguna Text Scroll.wav"
+dest_files=["res://.godot/imported/Laguna Text Scroll.wav-c9820a50d609a331151883b4aaf935d8.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

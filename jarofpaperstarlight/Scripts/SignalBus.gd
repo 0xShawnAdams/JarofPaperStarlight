@@ -15,3 +15,15 @@ signal dialogue_finished
 
 signal SetJarCount(count: int)
 signal JarCountIncrement
+
+signal PlayerStepsSound
+signal PlayerJumpAudio
+signal PlayerLandedAudio
+signal PaperStarCollectAudio
+signal WoodHitAudio
+signal TextAudio
+signal InteractAudio
+signal WoodBlockPushAudio
+signal PuzzleComplete
+signal PageTurnAudio
+signal MusicAudio
