@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://ba378uvca5r53"]
+[gd_scene load_steps=14 format=3 uid="uid://ba378uvca5r53"]
 
 [ext_resource type="Script" uid="uid://buapp8amtwu2l" path="res://Scenes/Levels/TestLevelManager.gd" id="1_almqe"]
 [ext_resource type="Texture2D" uid="uid://c3sdjo6due74q" path="res://Art/background/IMG_0422.png" id="2_almqe"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://ckjabkq2if48y" path="res://Scenes/DialogueWindow.tscn" id="8_avtx7"]
 [ext_resource type="PackedScene" uid="uid://dtbos2c0qwni" path="res://Scenes/JarGUI.tscn" id="9_3jove"]
 [ext_resource type="AudioStream" uid="uid://by24m5bcpxiyg" path="res://Music/Jar of Paper starlight main theme.wav" id="10_tfc4c"]
+[ext_resource type="Texture2D" uid="uid://cuf3ge0yeg2fe" path="res://Art/background/IMG_0432_20250925_133150.png" id="12_xhbyj"]
 
 [sub_resource type="ImageTexture" id="ImageTexture_ytf4i"]
 
@@ -20,12 +21,16 @@ script = ExtResource("1_almqe")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = SubResource("ImageTexture_ytf4i")
 
-[node name="FirstLevelConceptDesign2" type="Sprite2D" parent="."]
+[node name="Background" type="Sprite2D" parent="."]
 position = Vector2(1220, 328)
 scale = Vector2(1.4875, 1.34444)
 texture = ExtResource("2_axxus")
 
-[node name="FirstLevelConceptDesign" type="Sprite2D" parent="."]
+[node name="Img043220250925133150" type="Sprite2D" parent="."]
+position = Vector2(920, 301)
+texture = ExtResource("12_xhbyj")
+
+[node name="Desk and Chair" type="Sprite2D" parent="."]
 position = Vector2(743, 455)
 texture = ExtResource("2_almqe")
 
