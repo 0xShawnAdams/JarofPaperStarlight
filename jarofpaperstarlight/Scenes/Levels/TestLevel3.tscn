@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://b8hi5qioahw68"]
+[gd_scene load_steps=24 format=3 uid="uid://b8hi5qioahw68"]
 
 [ext_resource type="Script" path="res://Scripts/TestLevel3Manager.gd" id="1_vqil7"]
 [ext_resource type="Texture2D" uid="uid://cumgqo4w17jg3" path="res://Art/background/wallpaper.png" id="2_gslrh"]
@@ -16,8 +16,12 @@
 [ext_resource type="PackedScene" uid="uid://cfe4d6jbhxrfd" path="res://Scenes/WoodBlock1.tscn" id="14_r4x2o"]
 [ext_resource type="Texture2D" uid="uid://by4dgjrem7g2r" path="res://Art/background/IMG_0428.png" id="15_gslrh"]
 [ext_resource type="PackedScene" uid="uid://d3aqqp2pmf8nk" path="res://Scenes/blocker.tscn" id="15_miunl"]
+[ext_resource type="Texture2D" uid="uid://c5a8ytc700oon" path="res://Art/background/IMG_0425.png" id="16_gy2np"]
 [ext_resource type="PackedScene" uid="uid://1gwnh1a655jl" path="res://Scenes/Switch.tscn" id="16_mim6f"]
+[ext_resource type="Texture2D" uid="uid://ducl44u1qkr4d" path="res://Art/background/IMG_0426.png" id="16_sjxme"]
 [ext_resource type="PackedScene" uid="uid://dtto7stjddcbe" path="res://Scenes/level_ender.tscn" id="17_qydsq"]
+[ext_resource type="Texture2D" uid="uid://htqv0i44ncod" path="res://Art/background/IMG_0424.png" id="18_spfkq"]
+[ext_resource type="Texture2D" uid="uid://3egq7stlrwrx" path="res://Art/background/IMG_0427.png" id="19_q48t4"]
 
 [sub_resource type="ImageTexture" id="ImageTexture_ytf4i"]
 
@@ -122,10 +126,11 @@ stream = ExtResource("13_fosjd")
 
 [node name="RigidBody2D" parent="." instance=ExtResource("14_r4x2o")]
 position = Vector2(-258, 816)
+texture = ExtResource("15_gslrh")
 
 [node name="RigidBody2D2" parent="." instance=ExtResource("14_r4x2o")]
 position = Vector2(-423, 817)
-texture = ExtResource("15_gslrh")
+texture = ExtResource("16_sjxme")
 
 [node name="RigidBody2D6" parent="." instance=ExtResource("14_r4x2o")]
 position = Vector2(-791, 817)
@@ -133,13 +138,15 @@ texture = ExtResource("15_gslrh")
 
 [node name="RigidBody2D5" parent="." instance=ExtResource("14_r4x2o")]
 position = Vector2(-423, 581)
-texture = ExtResource("15_gslrh")
+texture = ExtResource("16_gy2np")
 
 [node name="RigidBody2D3" parent="." instance=ExtResource("14_r4x2o")]
 position = Vector2(-263, 452)
+texture = ExtResource("18_spfkq")
 
 [node name="RigidBody2D4" parent="." instance=ExtResource("14_r4x2o")]
 position = Vector2(-257, 602)
+texture = ExtResource("19_q48t4")
 
 [node name="BLOCKER" parent="." instance=ExtResource("15_miunl")]
 position = Vector2(2571, 799)

@@ -9,6 +9,7 @@ func _ready():
 	# Connect signals from the POV area
 	$POV.body_entered.connect(_on_body_entered)
 	$POV.body_exited.connect(_on_body_exited)
+	$Sprite2D.texture = texture
 
 func _on_body_exited(body):
 	if body.name == "Player":
