@@ -80,6 +80,7 @@ scale = Vector2(8.28224, 0.151446)
 [node name="NPC" parent="." instance=ExtResource("5_o0omn")]
 position = Vector2(1465, 838)
 texture = ExtResource("7_1mv4x")
+dialogue_lines = ["Hewwo!", "You are the paper prince!", "It's so great you are here!", "The author needs help, you need\\n to get the sword and show him\\n the light"]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -89,11 +90,18 @@ visible = false
 [node name="JarGUI" parent="CanvasLayer" instance=ExtResource("9_a7u0l")]
 
 [node name="move hint" type="Label" parent="."]
-offset_left = 229.0
-offset_top = 32.0
-offset_right = 482.0
-offset_bottom = 55.0
+offset_left = 202.0
+offset_top = 135.0
+offset_right = 455.0
+offset_bottom = 158.0
 text = "MOVE WITH THE ARROW KEYS!!!!!"
+
+[node name="move hint2" type="Label" parent="."]
+offset_left = 263.0
+offset_top = 171.0
+offset_right = 516.0
+offset_bottom = 194.0
+text = "Interact with Z!!"
 
 [node name="Label" type="Label" parent="."]
 offset_left = 492.0
