@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://ba378uvca5r53"]
+[gd_scene load_steps=18 format=3 uid="uid://ba378uvca5r53"]
 
 [ext_resource type="Script" uid="uid://buapp8amtwu2l" path="res://Scenes/Levels/TestLevelManager.gd" id="1_almqe"]
 [ext_resource type="Texture2D" uid="uid://c3sdjo6due74q" path="res://Art/background/IMG_0422.png" id="2_almqe"]
@@ -11,7 +11,11 @@
 [ext_resource type="PackedScene" uid="uid://ckjabkq2if48y" path="res://Scenes/DialogueWindow.tscn" id="8_avtx7"]
 [ext_resource type="PackedScene" uid="uid://dtbos2c0qwni" path="res://Scenes/JarGUI.tscn" id="9_3jove"]
 [ext_resource type="AudioStream" uid="uid://by24m5bcpxiyg" path="res://Music/Jar of Paper starlight main theme.wav" id="10_tfc4c"]
-[ext_resource type="Texture2D" uid="uid://cuf3ge0yeg2fe" path="res://Art/background/IMG_0432_20250925_133150.png" id="12_xhbyj"]
+[ext_resource type="Texture2D" uid="uid://c7cg8imafqssp" path="res://Art/background/IMG_0430.png" id="12_xhbyj"]
+[ext_resource type="PackedScene" uid="uid://cfe4d6jbhxrfd" path="res://Scenes/WoodBlock1.tscn" id="13_8dbpo"]
+[ext_resource type="PackedScene" uid="uid://d3aqqp2pmf8nk" path="res://Scenes/blocker.tscn" id="14_f1oxt"]
+[ext_resource type="PackedScene" uid="uid://1gwnh1a655jl" path="res://Scenes/Switch.tscn" id="15_c5omb"]
+[ext_resource type="PackedScene" uid="uid://dtto7stjddcbe" path="res://Scenes/level_ender.tscn" id="16_goqlq"]
 
 [sub_resource type="ImageTexture" id="ImageTexture_ytf4i"]
 
@@ -22,12 +26,12 @@ script = ExtResource("1_almqe")
 texture = SubResource("ImageTexture_ytf4i")
 
 [node name="Background" type="Sprite2D" parent="."]
-position = Vector2(1220, 328)
+position = Vector2(1141, 190)
 scale = Vector2(1.4875, 1.34444)
 texture = ExtResource("2_axxus")
 
-[node name="Img043220250925133150" type="Sprite2D" parent="."]
-position = Vector2(920, 301)
+[node name="book" type="Sprite2D" parent="."]
+position = Vector2(682, 444)
 texture = ExtResource("12_xhbyj")
 
 [node name="Desk and Chair" type="Sprite2D" parent="."]
@@ -35,10 +39,10 @@ position = Vector2(743, 455)
 texture = ExtResource("2_almqe")
 
 [node name="PaperStar" parent="." instance=ExtResource("3_xhbyj")]
-position = Vector2(704, 372)
+position = Vector2(715, 680)
 
 [node name="Player" parent="." instance=ExtResource("4_8dbpo")]
-position = Vector2(252, 345)
+position = Vector2(101, 549)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position = Vector2(-1, 0)
@@ -47,25 +51,68 @@ position_smoothing_enabled = true
 drag_horizontal_enabled = true
 drag_vertical_enabled = true
 
-[node name="StaticBody2D" parent="." instance=ExtResource("5_f1oxt")]
+[node name="WALLS" type="Node" parent="."]
+
+[node name="big floor" parent="WALLS" instance=ExtResource("5_f1oxt")]
 position = Vector2(909, 1027)
-scale = Vector2(11.4351, -2.59849)
+scale = Vector2(24.4351, -2.59849)
 
-[node name="Platform" parent="." instance=ExtResource("5_f1oxt")]
-position = Vector2(952, 551)
+[node name="Platform" parent="WALLS" instance=ExtResource("5_f1oxt")]
+position = Vector2(1171, 776)
 scale = Vector2(1.44, 0.160001)
 
-[node name="Platform3" parent="." instance=ExtResource("5_f1oxt")]
-position = Vector2(1018, 820)
+[node name="Platform4" parent="WALLS" instance=ExtResource("5_f1oxt")]
+position = Vector2(28, 657)
 scale = Vector2(1.44, 0.160001)
 
-[node name="Platform4" parent="." instance=ExtResource("5_f1oxt")]
-position = Vector2(501, 704)
+[node name="Platform5" parent="WALLS" instance=ExtResource("5_f1oxt")]
+position = Vector2(1047, 610)
+scale = Vector2(0.432567, 0.112722)
+
+[node name="Platform6" parent="WALLS" instance=ExtResource("5_f1oxt")]
+position = Vector2(1598, 340)
+scale = Vector2(0.360005, 0.160001)
+
+[node name="Platform7" parent="WALLS" instance=ExtResource("5_f1oxt")]
+position = Vector2(1234, 317)
+scale = Vector2(0.360005, 0.160001)
+
+[node name="Platform8" parent="WALLS" instance=ExtResource("5_f1oxt")]
+visible = false
+position = Vector2(17, 228)
+scale = Vector2(2.09581, -1.20891)
+
+[node name="Platform9" parent="WALLS" instance=ExtResource("5_f1oxt")]
+visible = false
+position = Vector2(271, 227)
+rotation = -1.07163
+scale = Vector2(0.259966, -1.37498)
+
+[node name="Platform3" parent="WALLS" instance=ExtResource("5_f1oxt")]
+position = Vector2(1451, 527)
 scale = Vector2(1.44, 0.160001)
 
-[node name="Platform2" parent="." instance=ExtResource("5_f1oxt")]
-position = Vector2(234, 452)
-scale = Vector2(2.56, 0.151446)
+[node name="Wall" parent="WALLS" instance=ExtResource("5_f1oxt")]
+position = Vector2(2561, -427)
+rotation = -1.5594
+scale = Vector2(11.5339, 2.36032)
+
+[node name="Wall3" parent="WALLS" instance=ExtResource("5_f1oxt")]
+visible = false
+position = Vector2(1734, -771)
+rotation = -1.5594
+scale = Vector2(11.5339, 2.36032)
+
+[node name="Wall2" parent="WALLS" instance=ExtResource("5_f1oxt")]
+visible = false
+position = Vector2(-437, 478)
+rotation = -1.5594
+scale = Vector2(12.1076, 5.1965)
+
+[node name="Platform2" parent="WALLS" instance=ExtResource("5_f1oxt")]
+visible = false
+position = Vector2(356, 254)
+scale = Vector2(8.76, 0.151446)
 
 [node name="NPC" parent="." instance=ExtResource("6_c5omb")]
 position = Vector2(1465, 838)
@@ -80,3 +127,19 @@ visible = false
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("10_tfc4c")
+
+[node name="RigidBody2D" parent="." instance=ExtResource("13_8dbpo")]
+position = Vector2(705, 26)
+
+[node name="BLOCKER" parent="." instance=ExtResource("14_f1oxt")]
+position = Vector2(2571, 799)
+scale = Vector2(1.12004, 2.8)
+collision_layer = 3
+
+[node name="BUTTOM" parent="." instance=ExtResource("15_c5omb")]
+position = Vector2(-32, 640)
+
+[node name="LevelEnder" parent="." instance=ExtResource("16_goqlq")]
+position = Vector2(2868, 731)
+
+[connection signal="pressed" from="BUTTOM" to="BLOCKER" method="_on_button_pressed"]

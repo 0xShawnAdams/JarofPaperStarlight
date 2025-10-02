@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://d3aqqp2pmf8nk"]
+
+[ext_resource type="Texture2D" uid="uid://d5uahjd633tx" path="res://Art/background/darkerwoodblockconcept.png" id="1_6mouw"]
+[ext_resource type="Script" uid="uid://dh64a51s1qsqt" path="res://Scenes/blocker.gd" id="1_gvv4h"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gvv4h"]
+size = Vector2(200, 75)
+
+[node name="StaticBody2D" type="StaticBody2D"]
+script = ExtResource("1_gvv4h")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_6mouw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 6.5)
+shape = SubResource("RectangleShape2D_gvv4h")

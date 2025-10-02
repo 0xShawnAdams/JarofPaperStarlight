@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://cfe4d6jbhxrfd"]
+
+[ext_resource type="Texture2D" uid="uid://p426742mc2yi" path="res://Art/background/IMG_0423.png" id="1_c11qi"]
+[ext_resource type="Script" uid="uid://dlgf78emb13f8" path="res://Scenes/WoodBlock.gd" id="1_gwd4k"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_26bol"]
+size = Vector2(52, 61)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c11qi"]
+size = Vector2(15.4661, 18.75)
+
+[node name="RigidBody2D" type="RigidBody2D"]
+script = ExtResource("1_gwd4k")
+
+[node name="CollisionBox" type="CollisionShape2D" parent="."]
+position = Vector2(-4, -3.5)
+scale = Vector2(2, 2)
+shape = SubResource("RectangleShape2D_26bol")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(2, 2)
+texture = ExtResource("1_c11qi")
+
+[node name="POV" type="Area2D" parent="."]
+
+[node name="InteractBox" type="CollisionShape2D" parent="POV"]
+position = Vector2(-5.5, -8)
+scale = Vector2(9.077, 8)
+shape = SubResource("RectangleShape2D_c11qi")

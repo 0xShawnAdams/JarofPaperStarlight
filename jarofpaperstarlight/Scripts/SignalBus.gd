@@ -13,6 +13,9 @@ func _on_enemy_died(param, another_param):
 signal dialogue_started(dialogue_lines: Array)
 signal dialogue_finished
 
+signal LevelEnd
+signal SpawnPaperStar
+
 signal SetJarCount(count: int)
 signal JarCountIncrement
 

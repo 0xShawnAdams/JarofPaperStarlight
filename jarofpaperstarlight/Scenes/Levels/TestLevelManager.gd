@@ -47,8 +47,13 @@ func _ready():
 	SignalBus.PlayerJumpAudio.connect(_on_Player_Jump)
 	SignalBus.PlayerLandedAudio.connect(_on_Player_Land)
 	SignalBus.InteractAudio.connect(_on_Player_Interact)
+	SignalBus.LevelEnd.connect(_on_Level_End)
 	
-	
+
+func _on_Level_End():
+	# load the next level
+	get_tree().change_scene_to_file("res://Scenes/Levels/TestLevel.tscn")
+
 func _process(delta: float) -> void:
 
 	if (walking):
@@ -56,7 +61,8 @@ func _process(delta: float) -> void:
 			StepPlayer.play()
 	else:
 		StepPlayer.stop()
-	
+	#if ($BLOCKER.disabled):
+	#	$PaperStar.disabled = false
 	
 	
 func _on_npc_dialogue_triggered(npc_texture: Texture2D, lines: Array):
