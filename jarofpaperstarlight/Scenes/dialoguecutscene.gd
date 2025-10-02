@@ -15,7 +15,7 @@ func _ready():
 	#SignalBus.dialogue_started.emit(dialogue_lines)
 	SignalBus.NPCDialogueTrigger.emit(texture, dialogue_lines)
 	SignalBus.dialogue_finished.connect(_on_finish)
-
+	play_sound("res://Music/dev.wav", Vector2(100, 200))
 	play_sound("res://Music/Laguna Text Scroll.wav", Vector2(100, 200))
 	#dialogue_active = true  # Lock player movement
 	#emit_signal("dialogue_started")
