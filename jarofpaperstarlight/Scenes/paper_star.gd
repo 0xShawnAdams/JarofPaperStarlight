@@ -1,5 +1,5 @@
 extends Area2D
-@export var disabled = true
+@export var disabled = false
 #@export var visible = false
 
 
@@ -7,7 +7,7 @@ func _ready():
 	$Area2D.body_entered.connect(_on_body_entered)
 	SignalBus.SpawnPaperStar.connect(_on_Spawn)
 	#disabled = true
-	$CollisionShape2D2.disabled = true
+	$CollisionShape2D2.disabled = false
 	#visible = false
 	
 
