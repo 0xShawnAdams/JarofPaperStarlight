@@ -1,13 +1,13 @@
 [gd_scene load_steps=6 format=3 uid="uid://c3a28qtro62is"]
 
-[ext_resource type="Texture2D" uid="uid://dan75x0yphbel" path="res://Art/bear.png" id="1_acqhf"]
 [ext_resource type="Script" uid="uid://clg35g1aian0l" path="res://Scenes/npc.gd" id="1_xxsvc"]
+[ext_resource type="Texture2D" uid="uid://b18nnbojp8kp8" path="res://Art/background/IMG_0441.png" id="2_xxsvc"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_xxsvc"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_acqhf")
+"texture": ExtResource("2_xxsvc")
 }],
 "loop": true,
 "name": &"default",
@@ -25,7 +25,7 @@ collision_layer = 3
 script = ExtResource("1_xxsvc")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(-5, -29)
+position = Vector2(0, 2)
 sprite_frames = SubResource("SpriteFrames_xxsvc")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

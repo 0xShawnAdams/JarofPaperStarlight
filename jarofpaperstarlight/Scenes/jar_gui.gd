@@ -6,9 +6,16 @@ extends Control
 func _ready():
 	SignalBus.SetJarCount.connect(setcount)
 	SignalBus.JarCountIncrement.connect(jarinc)
+	$HBoxContainer/AnimatedSprite2D2.connect("animation_finished", Callable(self, "_on_animation_finished"))
 	
+
+func _on_animation_finished():
+	# This will stop the animation once it's finished
+	$HBoxContainer/AnimatedSprite2D2.stop()
+
 func jarinc():
 	Count = Count +1
+	$HBoxContainer/AnimatedSprite2D2.play()
 
 func setcount(count: int):
 	Count = count
