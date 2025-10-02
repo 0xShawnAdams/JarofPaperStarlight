@@ -1,5 +1,5 @@
 extends Node
-
+var score = 0
 
 signal NPCDialogueTrigger(npc_texture: Texture2D, dialogue_lines: Array)
 # EMIT LIKE THIS: SignalBus.enemy_died.emit(something, something_else)

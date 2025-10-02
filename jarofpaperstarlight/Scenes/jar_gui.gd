@@ -7,7 +7,7 @@ func _ready():
 	SignalBus.SetJarCount.connect(setcount)
 	SignalBus.JarCountIncrement.connect(jarinc)
 	$HBoxContainer/AnimatedSprite2D2.connect("animation_finished", Callable(self, "_on_animation_finished"))
-	
+	Count = SignalBus.score
 
 func _on_animation_finished():
 	# This will stop the animation once it's finished
@@ -15,10 +15,12 @@ func _on_animation_finished():
 
 func jarinc():
 	Count = Count +1
+	SignalBus.score = SignalBus.score +1
 	$HBoxContainer/AnimatedSprite2D2.play()
 
 func setcount(count: int):
 	Count = count
+	SignalBus.score = count
 
 func _process(delta: float):
 	$HBoxContainer/Label.text = "x %d" % Count

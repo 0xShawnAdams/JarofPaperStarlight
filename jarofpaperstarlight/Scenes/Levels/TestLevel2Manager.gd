@@ -55,7 +55,7 @@ func _ready():
 
 func _on_Level_End():
 	# load the next level
-	get_tree().change_scene_to_file("res://Scenes/Levels/TestLevel.tscn")
+	get_tree().change_scene_to_file("res://Scenes/Levels/TestLevel3.tscn")
 
 func _process(delta: float) -> void:
 

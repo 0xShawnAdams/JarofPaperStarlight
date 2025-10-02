@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://ds4bxxyckn8g" path="res://Scenes/Levels/TestLevel2Manager.gd" id="1_avtx7"]
 [ext_resource type="Texture2D" uid="uid://c3sdjo6due74q" path="res://Art/background/IMG_0422.png" id="2_almqe"]
-[ext_resource type="Texture2D" uid="uid://d0brokt8vb68a" path="res://Art/first level concept design.png" id="2_axxus"]
+[ext_resource type="Texture2D" uid="uid://cumgqo4w17jg3" path="res://Art/background/wallpaper.png" id="2_avtx7"]
 [ext_resource type="PackedScene" uid="uid://fldsm8nrdj4k" path="res://Scenes/paper_star.tscn" id="3_xhbyj"]
 [ext_resource type="PackedScene" uid="uid://cyhxnrhlyqpeg" path="res://Scenes/player.tscn" id="4_8dbpo"]
 [ext_resource type="PackedScene" uid="uid://d2yhmq3ectdh2" path="res://Scenes/platform.tscn" id="5_f1oxt"]
@@ -27,9 +27,9 @@ script = ExtResource("1_avtx7")
 texture = SubResource("ImageTexture_ytf4i")
 
 [node name="Background" type="Sprite2D" parent="."]
-position = Vector2(1141, 190)
-scale = Vector2(1.4875, 1.34444)
-texture = ExtResource("2_axxus")
+position = Vector2(875, 263)
+scale = Vector2(10.1958, 4.95556)
+texture = ExtResource("2_avtx7")
 
 [node name="book" type="Sprite2D" parent="."]
 position = Vector2(682, 444)

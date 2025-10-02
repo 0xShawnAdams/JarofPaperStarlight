@@ -20,7 +20,7 @@ script = ExtResource("1_dqpvo")
 texture = SubResource("ImageTexture_ytf4i")
 
 [node name="FirstLevelConceptDesign" type="Sprite2D" parent="."]
-position = Vector2(1348, 671)
+position = Vector2(1295, 687)
 scale = Vector2(1.78473, 1.26959)
 texture = ExtResource("2_qhub5")
 
