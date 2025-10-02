@@ -36,6 +36,8 @@ func _ready():
 	#	push_error("Failed to load sound: " + stream_path)
 	#	return
 	StepPlayer.stream = sound
+	
+	$PaperStar.visible = false
 	add_child(StepPlayer)
 	
 	var npc := $NPC  # or preload/instantiate
@@ -53,7 +55,7 @@ func _ready():
 
 func _on_Level_End():
 	# load the next level
-	get_tree().change_scene_to_file("res://Scenes/Levels/TestLevel2.tscn")
+	get_tree().change_scene_to_file("res://Scenes/Levels/TestLevel.tscn")
 
 func _process(delta: float) -> void:
 

@@ -1,6 +1,6 @@
-[gd_scene load_steps=18 format=3 uid="uid://ba378uvca5r53"]
+[gd_scene load_steps=19 format=3 uid="uid://ba378uvca5r53"]
 
-[ext_resource type="Script" uid="uid://buapp8amtwu2l" path="res://Scenes/Levels/TestLevelManager.gd" id="1_almqe"]
+[ext_resource type="Script" uid="uid://ds4bxxyckn8g" path="res://Scenes/Levels/TestLevel2Manager.gd" id="1_avtx7"]
 [ext_resource type="Texture2D" uid="uid://c3sdjo6due74q" path="res://Art/background/IMG_0422.png" id="2_almqe"]
 [ext_resource type="Texture2D" uid="uid://d0brokt8vb68a" path="res://Art/first level concept design.png" id="2_axxus"]
 [ext_resource type="PackedScene" uid="uid://fldsm8nrdj4k" path="res://Scenes/paper_star.tscn" id="3_xhbyj"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://dan75x0yphbel" path="res://Art/bear.png" id="7_goqlq"]
 [ext_resource type="PackedScene" uid="uid://ckjabkq2if48y" path="res://Scenes/DialogueWindow.tscn" id="8_avtx7"]
 [ext_resource type="PackedScene" uid="uid://dtbos2c0qwni" path="res://Scenes/JarGUI.tscn" id="9_3jove"]
+[ext_resource type="Texture2D" uid="uid://c7ac2oqg7t3aq" path="res://Art/bearface.png" id="10_avtx7"]
 [ext_resource type="AudioStream" uid="uid://by24m5bcpxiyg" path="res://Music/Jar of Paper starlight main theme.wav" id="10_tfc4c"]
 [ext_resource type="Texture2D" uid="uid://c7cg8imafqssp" path="res://Art/background/IMG_0430.png" id="12_xhbyj"]
 [ext_resource type="PackedScene" uid="uid://cfe4d6jbhxrfd" path="res://Scenes/WoodBlock1.tscn" id="13_8dbpo"]
@@ -20,7 +21,7 @@
 [sub_resource type="ImageTexture" id="ImageTexture_ytf4i"]
 
 [node name="TestLevel" type="Node2D"]
-script = ExtResource("1_almqe")
+script = ExtResource("1_avtx7")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = SubResource("ImageTexture_ytf4i")
@@ -42,7 +43,7 @@ texture = ExtResource("2_almqe")
 position = Vector2(715, 680)
 
 [node name="Player" parent="." instance=ExtResource("4_8dbpo")]
-position = Vector2(101, 549)
+position = Vector2(70, 48)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position = Vector2(-1, 0)
@@ -117,6 +118,7 @@ scale = Vector2(8.76, 0.151446)
 [node name="NPC" parent="." instance=ExtResource("6_c5omb")]
 position = Vector2(1465, 838)
 texture = ExtResource("7_goqlq")
+texture2 = ExtResource("10_avtx7")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 

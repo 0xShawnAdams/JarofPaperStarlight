@@ -5,7 +5,8 @@ extends Area2D
 var player_in_area := false
 var dialoguetriggered = false;
 @export var texture: Texture2D
-@export var dialogue_lines := ["Hello!", "Welcome to our village.", "Good luck!"]
+@export var texture2: Texture2D
+@export var dialogue_lines := ["Hewwo!", "Welcome to the Author's Bedroom", "Try moving the wooden block up\n on the desk by pressing Z!"]
 
 
 """
@@ -42,7 +43,7 @@ func _process(delta):
 	if (not dialoguetriggered):
 		if player_in_area and Input.is_action_just_pressed("z"):
 			#emit_signal("dialogue_triggered")
-			var tex = texture
+			var tex = texture2
 			#emit_signal("dialogue_triggered", tex, dialogue_lines)
 			SignalBus.NPCDialogueTrigger.emit(tex, dialogue_lines)
 			SignalBus.InteractAudio.emit()

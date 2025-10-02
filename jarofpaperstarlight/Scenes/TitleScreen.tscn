@@ -1,0 +1,82 @@
+[gd_scene load_steps=11 format=3 uid="uid://7o5gdaho8lyl"]
+
+[ext_resource type="Texture2D" uid="uid://blduv0b7xetd" path="res://Art/background/starry night (2).png" id="1_uebgo"]
+[ext_resource type="Script" uid="uid://cwm8m0g87iv03" path="res://Scenes/title_screen.gd" id="1_vmg2h"]
+[ext_resource type="Texture2D" uid="uid://ckxmmsldodse1" path="res://Art/background/IMG_0436.png" id="3_8l4an"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vmg2h"]
+atlas = ExtResource("1_uebgo")
+region = Rect2(500, 0, 500, 500)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8l4an"]
+atlas = ExtResource("1_uebgo")
+region = Rect2(1000, 0, 500, 500)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n15yj"]
+atlas = ExtResource("1_uebgo")
+region = Rect2(0, 500, 500, 500)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_emot1"]
+atlas = ExtResource("1_uebgo")
+region = Rect2(500, 500, 500, 500)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i5sur"]
+atlas = ExtResource("1_uebgo")
+region = Rect2(1000, 500, 500, 500)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7whhf"]
+atlas = ExtResource("1_uebgo")
+region = Rect2(0, 1000, 500, 500)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5c2t2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vmg2h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8l4an")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n15yj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_emot1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i5sur")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7whhf")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_vmg2h")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(584, 314)
+scale = Vector2(2.4947, 1.40065)
+sprite_frames = SubResource("SpriteFrames_5c2t2")
+frame = 3
+frame_progress = 0.422147
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Button" type="Button" parent="CanvasLayer"]
+offset_left = 587.0
+offset_top = 336.0
+offset_right = 628.0
+offset_bottom = 367.0
+text = "Play"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(584, 299)
+texture = ExtResource("3_8l4an")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+
+[connection signal="pressed" from="CanvasLayer/Button" to="." method="_on_button_pressed"]

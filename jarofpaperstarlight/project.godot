@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="JarofPaperStarlight"
-run/main_scene="uid://daagploownaed"
+run/main_scene="uid://ba378uvca5r53"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="res://icon.svg"
 

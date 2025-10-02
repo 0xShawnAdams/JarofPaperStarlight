@@ -25,21 +25,27 @@ texture = ExtResource("1_ss4xl")
 
 [node name="PaperStar" parent="." instance=ExtResource("2_7e5cw")]
 position = Vector2(704, 372)
+disabled = false
 
 [node name="PaperStar2" parent="." instance=ExtResource("2_7e5cw")]
 position = Vector2(989, 687)
+disabled = false
 
 [node name="PaperStar3" parent="." instance=ExtResource("2_7e5cw")]
 position = Vector2(107, 801)
+disabled = false
 
 [node name="PaperStar4" parent="." instance=ExtResource("2_7e5cw")]
 position = Vector2(1243, 368)
+disabled = false
 
 [node name="PaperStar5" parent="." instance=ExtResource("2_7e5cw")]
 position = Vector2(84, 200)
+disabled = false
 
 [node name="PaperStar6" parent="." instance=ExtResource("2_7e5cw")]
 position = Vector2(1740, 812)
+disabled = false
 
 [node name="Player" parent="." instance=ExtResource("3_iuug4")]
 position = Vector2(252, 345)
@@ -101,6 +107,13 @@ offset_right = 1043.0
 offset_bottom = 302.0
 text = "collect the paper star to update 
 the score in the top right! Jar will fill up!"
+
+[node name="Label2" type="Label" parent="."]
+offset_left = 1508.0
+offset_top = 638.0
+offset_right = 2059.0
+offset_bottom = 687.0
+text = "Go into the book to complete the tutorial level!"
 
 [node name="LevelEnder" parent="." instance=ExtResource("10_qhub5")]
 position = Vector2(2049, 740)
