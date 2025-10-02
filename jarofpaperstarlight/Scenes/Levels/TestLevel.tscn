@@ -26,27 +26,21 @@ texture = ExtResource("2_qhub5")
 
 [node name="PaperStar" parent="." instance=ExtResource("2_7e5cw")]
 position = Vector2(704, 372)
-disabled = false
 
 [node name="PaperStar2" parent="." instance=ExtResource("2_7e5cw")]
 position = Vector2(989, 687)
-disabled = false
 
 [node name="PaperStar3" parent="." instance=ExtResource("2_7e5cw")]
 position = Vector2(107, 801)
-disabled = false
 
 [node name="PaperStar4" parent="." instance=ExtResource("2_7e5cw")]
 position = Vector2(1243, 368)
-disabled = false
 
 [node name="PaperStar5" parent="." instance=ExtResource("2_7e5cw")]
 position = Vector2(84, 200)
-disabled = false
 
 [node name="PaperStar6" parent="." instance=ExtResource("2_7e5cw")]
 position = Vector2(1740, 812)
-disabled = false
 
 [node name="Player" parent="." instance=ExtResource("3_iuug4")]
 position = Vector2(252, 345)

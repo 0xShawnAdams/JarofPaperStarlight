@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://b8hi5qioahw68"]
+[gd_scene load_steps=25 format=3 uid="uid://b8hi5qioahw68"]
 
 [ext_resource type="Script" uid="uid://ckn33e83lqk0t" path="res://Scripts/TestLevel3Manager.gd" id="1_vqil7"]
 [ext_resource type="Texture2D" uid="uid://cumgqo4w17jg3" path="res://Art/background/wallpaper.png" id="2_gslrh"]
@@ -22,6 +22,7 @@
 [ext_resource type="PackedScene" uid="uid://dtto7stjddcbe" path="res://Scenes/level_ender.tscn" id="17_qydsq"]
 [ext_resource type="Texture2D" uid="uid://htqv0i44ncod" path="res://Art/background/IMG_0424.png" id="18_spfkq"]
 [ext_resource type="Texture2D" uid="uid://3egq7stlrwrx" path="res://Art/background/IMG_0427.png" id="19_q48t4"]
+[ext_resource type="PackedScene" uid="uid://dwy0v4hri71gn" path="res://Scenes/Sword.tscn" id="23_spfkq"]
 
 [sub_resource type="ImageTexture" id="ImageTexture_ytf4i"]
 
@@ -113,7 +114,7 @@ scale = Vector2(8.76, 0.151446)
 position = Vector2(-1002, 822)
 texture = ExtResource("9_hgdri")
 texture2 = ExtResource("10_d4msg")
-dialogue_lines = ["Hewwo!", "The Author might be sleeping, go look!", "He needs your help!"]
+dialogue_lines = ["Hewwo!", "The paper sword is on the bed!", "It is your impliment. You must\\n help the author!"]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -159,5 +160,9 @@ position = Vector2(1426, 389)
 
 [node name="LevelEnder" parent="." instance=ExtResource("17_qydsq")]
 position = Vector2(2868, 731)
+
+[node name="SWORD" parent="." instance=ExtResource("23_spfkq")]
+position = Vector2(1037, 303)
+scale = Vector2(2, 2)
 
 [connection signal="pressed" from="BUTTOM" to="BLOCKER" method="_on_button_pressed"]
