@@ -31,7 +31,7 @@ func _on_dialogue_finished():
 	dialogue_active = false
 	
 func _ready():
-	
+	play_sound("res://Music/dev.wav", Vector2(100, 200))
 	#if sound == null:
 	#	push_error("Failed to load sound: " + stream_path)
 	#	return

@@ -1,8 +1,8 @@
 [gd_scene load_steps=12 format=3 uid="uid://daagploownaed"]
 
 [ext_resource type="Script" uid="uid://buapp8amtwu2l" path="res://Scenes/Levels/TestLevelManager.gd" id="1_dqpvo"]
-[ext_resource type="Texture2D" uid="uid://d0brokt8vb68a" path="res://Art/first level concept design.png" id="1_ss4xl"]
 [ext_resource type="PackedScene" uid="uid://fldsm8nrdj4k" path="res://Scenes/paper_star.tscn" id="2_7e5cw"]
+[ext_resource type="Texture2D" uid="uid://dh7m5lweew6gv" path="res://Art/background/IMG_0444.png" id="2_qhub5"]
 [ext_resource type="PackedScene" uid="uid://cyhxnrhlyqpeg" path="res://Scenes/player.tscn" id="3_iuug4"]
 [ext_resource type="PackedScene" uid="uid://d2yhmq3ectdh2" path="res://Scenes/platform.tscn" id="4_iuug4"]
 [ext_resource type="PackedScene" uid="uid://c3a28qtro62is" path="res://Scenes/npc.tscn" id="5_o0omn"]
@@ -20,8 +20,9 @@ script = ExtResource("1_dqpvo")
 texture = SubResource("ImageTexture_ytf4i")
 
 [node name="FirstLevelConceptDesign" type="Sprite2D" parent="."]
-position = Vector2(964, 541)
-texture = ExtResource("1_ss4xl")
+position = Vector2(1348, 671)
+scale = Vector2(1.78473, 1.26959)
+texture = ExtResource("2_qhub5")
 
 [node name="PaperStar" parent="." instance=ExtResource("2_7e5cw")]
 position = Vector2(704, 372)

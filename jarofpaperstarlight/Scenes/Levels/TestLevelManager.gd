@@ -18,7 +18,7 @@ func play_sound(stream_path: String, position: Vector2):
 	var player = AudioStreamPlayer2D.new()
 	add_child(player)
 	player.stream = sound
-	player.volume_db = -8
+	player.volume_db = -4
 	player.global_position = $Player/Camera2D.global_position
 	player.play()
 	
@@ -31,7 +31,7 @@ func _on_dialogue_finished():
 	dialogue_active = false
 	
 func _ready():
-	
+	play_sound("res://Music/dev.wav", Vector2(100, 200))
 	#if sound == null:
 	#	push_error("Failed to load sound: " + stream_path)
 	#	return

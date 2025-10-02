@@ -90,6 +90,7 @@ rotation = -1.07163
 scale = Vector2(0.259966, -1.37498)
 
 [node name="Platform3" parent="WALLS" instance=ExtResource("5_f1oxt")]
+visible = false
 position = Vector2(1451, 527)
 scale = Vector2(1.44, 0.160001)
 
